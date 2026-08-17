@@ -1,5 +1,5 @@
 import pytest  # type: ignore
-from warehouse_restock_manifest.store import load_Manifest,FixtureNotFound
+from warehouse_restock_manifest.store import load_Manifest,FixtureNotFound,InvalidFixtureFormat
 from warehouse_restock_manifest.models import Restockitem
 from pydantic import ValidationError
 from pathlib import Path
@@ -46,3 +46,8 @@ def test_restock_manifest_json():
 def test_load_path_json():
     with pytest.raises(FixtureNotFound):
         valid_manifest, error_manifest = load_Manifest(Path("data/non_existant_manifest.json")) 
+
+def test_broken_json_file():
+     with pytest.raises(InvalidFixtureFormat):
+            valid_manifest, error_manifest = load_Manifest(Path("data/broken.json"))
+    
