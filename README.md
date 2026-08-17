@@ -1,4 +1,4 @@
-How to Run:
+How to Run (Windows):
   * CD to the 'warehouse_restock_manifest' folder and create the virtual environment using 'python -m venv .venv'.
   * Start the virtual environment using '.venv\Scripts\Activate.ps1', then cd back to the 'WareHouse_Restock_App folder'.
   * Install dependencies using the following commands:
