@@ -1,0 +1,22 @@
+[project]
+name = "warehouse_restock_manifest"
+version = "0.1.0"
+description = "a Python project that validates a warehouse's restock manifest — a batch of item rows that may contain some bad data — using a Pydantic v2 model, a custom exception hierarchy, and a defensive loader function, and prove all of it works with a pytest test suite, structured as a proper Python project (separate source and test files, not everything crammed into one script) and pushed to its own GitHub repository."
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.7",
+    "pydantic-settings>=2.3"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23"
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["warehouse_restock_manifest"]
