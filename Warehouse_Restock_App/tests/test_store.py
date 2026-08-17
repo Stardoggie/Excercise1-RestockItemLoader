@@ -35,7 +35,7 @@ def test_valid_fields():
         }
     assert Restockitem(**data) != pytest.raises(ValidationError)
 
-def test_store_json_intake():
+def test_restock_manifest_json():
     """
     tests restock_manifest.json for expected number of valid and invalid tickets
     """
@@ -43,6 +43,6 @@ def test_store_json_intake():
     assert len(valid_manifest) == 8, "Expected for Valid Restock items to be 8"
     assert len(error_manifest) == 4, "Expected for Invalid RestockItems to be 4"
 
-def test_load_json():
+def test_load_path_json():
     with pytest.raises(FixtureNotFound):
         valid_manifest, error_manifest = load_Manifest(Path("data/non_existant_manifest.json")) 
