@@ -17,7 +17,7 @@ class InvalidFixtureFormat(ManifestStoreError):
 
 def load_Manifest(path : Path |None = None) -> tuple[list[Restockitem],list[dict[str, list[str]]]]:
     """
-        loads restock manifests as a Restockitem class from a .json file and sorts it into valid and invalid tickets with error handling
+        loads restock manifests as a Restockitem class from a .json file and sorts it into valid and invalid Items with error handling
     """
     #print(f"---FUNCTION NAME: {load_Manifest.__name__}---")
     resolved_path = path if path is not None else AppSettings().data_path
